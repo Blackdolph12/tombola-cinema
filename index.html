@@ -1,1 +1,64 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TOMBOLA</title><style>body{background:#000;color:#fff;font-family:Arial;margin:0}.g{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px}.c{background:#181818;border-radius:8px;overflow:hidden;border:1px solid #222;position:relative}.c img{width:100%;height:180px;object-fit:cover}.b{position:absolute;top:5px;left:5px;background:#0f0;color:#000;font-size:8px;font-weight:900;padding:2px 5px;border-radius:3px}.t{background:#0f0;color:#000;border:none;width:100%;padding:7px;border-radius:5px;font-weight:900;margin-top:4px}.l{position:fixed;inset:0;background:#000;z-index:99;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;text-align:center}</style></head><body><div id="lk" class="l"><h1 style="color:#0f0">TOMBOLA CINEMA</h1><p>2000 FILMS REAL</p><button onclick="localStorage.setItem('ok','1');document.getElementById('lk').style.display='none'" style="background:#0f0;color:#000;border:none;padding:12px 30px;border-radius:25px;font-weight:900;margin-top:15px">FUNGOLA ▶️</button></div><div class="g" id="g"></div><script>T=["Rambo Lingala","Mama Congo","Batman Kin","Motema Mabe","Bolingo","Mboka","Police Kin","Sila Bisalu"];G=document.getElementById('g');for(i=1;i<=80;i++){let n=T[Math.random()*T.length|0]+" "+i;let im="https://picsum.photos/seed/"+i+"/200/300";G.innerHTML+=`<div class=c><span class=b>LINGALA</span><img src="${im}"><div style=padding:6px><div style=font-size:11px>${n}</div><button class=t onclick="window.open('https://m.youtube.com/results?search_query='+encodeURIComponent('${n} film congolais theatre complet lingala'),'_blank')">▶️ TALA FILM</button></div></div>`}if(localStorage.getItem('ok')=='1')document.getElementById('lk').style.display='none';</script></body></html>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TOMBOLA PRO - PAY</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#fff;font-family:Inter,Arial;overflow-x:hidden}.top{padding:14px;background:#000;position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1a1a1a}.logo{color:#e50914;font-weight:900;font-size:22px;letter-spacing:1px}.logo span{color:#0f0;font-size:11px;border:1px solid #0f0;padding:2px 6px;border-radius:20px;margin-left:8px}.searchbar{margin:10px;background:#1a1a1a;border-radius:25px;padding:10px 15px;display:flex;align-items:center;gap:10px;border:1px solid #222}.searchbar input{background:transparent;border:none;color:#fff;width:100%;outline:none}.row-title{padding:15px 12px 8px;font-weight:800;font-size:16px}.row{display:flex;gap:10px;overflow-x:auto;padding:0 12px 10px;scrollbar-width:none}.row::-webkit-scrollbar{display:none}.movie{min-width:135px;width:135px;background:#161616;border-radius:10px;overflow:hidden;position:relative;flex-shrink:0;border:1px solid #222;transition:.2s}.movie:active{transform:scale(.95)}.movie img{width:100%;height:195px;object-fit:cover}.movie .grad{position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(transparent,rgba(0,0,0,.9))}.movie h4{position:absolute;bottom:6px;left:6px;right:6px;font-size:11px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lockbadge{position:absolute;top:6px;right:6px;background:rgba(0,0,0,.7);backdrop-filter:blur(5px);padding:4px 6px;border-radius:15px;font-size:10px}.paymodal{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;display:none;align-items:end}.paybox{background:#141414;border-radius:20px 20px 0 0;width:100%;padding:20px;border-top:1px solid #222;max-height:90vh;overflow-y:auto}.plan{display:flex;justify-content:space-between;align-items:center;background:#1e1e1e;border:1px solid #2a2a2a;border-radius:12px;padding:14px;margin:10px 0}.plan.active{border-color:#0f0;background:#0f0a14}.paybtn{background:#0f0;color:#000;border:none;width:100%;padding:14px;border-radius:30px;font-weight:900;font-size:16px;margin-top:12px}.freebtn{background:#222;color:#fff;border:1px solid #333;width:100%;padding:12px;border-radius:30px;margin-top:8px}</style></head><body>
+<div class="top"><div class="logo">TOMBOLA <span>🇨🇩 PRO</span></div><div style="font-size:11px;color:#0f0">● 2000 FILMS</div></div>
+<div class="searchbar"><span>🔍</span><input placeholder="Search Lingala films..."><span>🎙️</span></div>
+<p style="padding:0 12px;color:#888;font-size:12px">Top picks from Congolese cinema • Lingala 100%</p>
+<div class="row-title">🔥 Top Results - Lingala</div><div class="row" id="r1"></div>
+<div class="row-title">😂 African Comedy Movies</div><div class="row" id="r2"></div>
+<div class="row-title">💔 Social Issue Dramas</div><div class="row" id="r3"></div>
+<div class="row-title">🏆 Critically Acclaimed</div><div class="row" id="r4"></div>
+<div class="row-title">🇨🇩 Tombola Originals</div><div class="row" id="r5"></div>
+
+<!-- PAYWALL -->
+<div id="pay" class="paymodal"><div class="paybox">
+<div style="width:40px;height:4px;background:#333;border-radius:2px;margin:0 auto 15px"></div>
+<h2>🔒 Unlock All Films</h2><p style="color:#888;font-size:13px;margin:6px 0 12px">Pay once, watch 2000+ films. Like Netflix!</p>
+
+<div class="plan active" onclick="sel(this,5000)"><div><b>1 Mois - Populaire</b><p style="font-size:11px;color:#888">2000 films + nouveautés</p></div><b style="color:#0f0">5,000 FC</b></div>
+<div class="plan" onclick="sel(this,9000)"><div><b>3 Mois - Meilleur prix</b><p style="font-size:11px;color:#888">Économisez 40% 🔥</p></div><b>9,000 FC</b></div>
+<div class="plan" onclick="sel(this,15000)"><div><b>1 An - VIP</b><p style="font-size:11px;color:#888">Accès à vie + support</p></div><b>15,000 FC</b></div>
+
+<div style="background:#0a0a0a;border-radius:12px;padding:12px;margin:12px 0;border:1px solid #1a1a1a">
+<p style="font-size:12px;font-weight:800">💳 Pay with Mobile Money:</p>
+<p style="font-size:11px;color:#888;margin-top:6px">1. Airtel Money: *150*10#<br>2. M-Pesa: *1122#<br>3. Orange: *124#<br><br>Send to: <b style="color:#0f0">+243 823 043 089</b><br>Name: TOMBOLA CINEMA</p>
+</div>
+
+<input id="code" placeholder="Entrez code après paiement (ex: TMB-1234)" style="width:100%;padding:12px;background:#000;border:1px solid #333;border-radius:10px;color:#fff;text-align:center;margin-top:8px">
+<button class="paybtn" onclick="unlock()">✅ J'AI PAYÉ - DÉBLOQUER ▶️</button>
+<button class="freebtn" onclick="demo()">👁️ Voir Démo Gratuite (3 films)</button>
+<p style="text-align:center;color:#555;font-size:10px;margin-top:12px">WhatsApp proof: +243 823 043 089</p>
+<button onclick="closePay()" style="background:transparent;color:#888;border:none;width:100%;padding:12px;margin-top:8px">✕ Fermer</button>
+</div></div>
+
+<script>
+price=5000;
+films=[
+{name:"Lagos Love Story",cat:"top",img:"https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300"},
+{name:"A Sunday Affair",cat:"top",img:"https://images.unsplash.com/photo-1592621386926-35a7624470c3?w=300"},
+{name:"The Man of God",cat:"top",img:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300"},
+{name:"LIONHEART",cat:"top",img:"https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300"},
+{name:"LIONHEART Comedy",cat:"comedy",img:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300"},
+{name:"CHIEF DADDY",cat:"comedy",img:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300"},
+{name:"Namaste Wahala",cat:"comedy",img:"https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300"},
+{name:"Ghost and Tout",cat:"comedy",img:"https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300"},
+{name:"Glamour Girls",cat:"drama",img:"https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300"},
+{name:"THINLINE",cat:"drama",img:"https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300"},
+{name:"Jagun Jagun",cat:"drama",img:"https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=300"},
+{name:"ADIRE",cat:"drama",img:"https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=300"},
+{name:"Rambo Lingala 15",cat:"lingala",img:"https://picsum.photos/seed/rambo15/200/300"},
+{name:"Motema Mabe 22",cat:"lingala",img:"https://picsum.photos/seed/motema22/200/300"},
+{name:"Mama Congo",cat:"lingala",img:"https://picsum.photos/seed/mama/200/300"},
+{name:"Sila Bisalu",cat:"lingala",img:"https://picsum.photos/seed/sila/200/300"},
+{name:"Vie Na Bango",cat:"lingala",img:"https://picsum.photos/seed/vie/200/300"},
+{name:"Batman Kinshasa",cat:"lingala",img:"https://picsum.photos/seed/batman/200/300"}
+];
+function mk(f){let lock=localStorage.getItem('paid')?'':'🔒';return `<div class=movie onclick="play('${f.name}')"><span class=lockbadge>${lock}</span><img src="${f.img}" loading=lazy><div class=grad></div><h4>${f.name}</h4></div>`}
+function render(){document.getElementById('r1').innerHTML=films.filter(f=>f.cat=='top').map(mk).join('');document.getElementById('r2').innerHTML=films.filter(f=>f.cat=='comedy').map(mk).join('');document.getElementById('r3').innerHTML=films.filter(f=>f.cat=='drama').map(mk).join('');document.getElementById('r4').innerHTML=films.filter(f=>f.cat=='lingala').slice(0,4).map(mk).join('');document.getElementById('r5').innerHTML=films.filter(f=>f.cat=='lingala').slice(2).map(mk).join('');}
+function play(name){if(!localStorage.getItem('paid')){let d=localStorage.getItem('demo')||0;if(d>=3){document.getElementById('pay').style.display='flex';return}else{localStorage.setItem('demo',parseInt(d)+1)}}let q=encodeURIComponent(name+" film congolais complet lingala theatre");window.open("https://m.youtube.com/results?search_query="+q,"_blank");}
+function sel(el,p){document.querySelectorAll('.plan').forEach(x=>x.classList.remove('active'));el.classList.add('active');price=p;}
+function unlock(){let c=document.getElementById('code').value.trim().toUpperCase();if(c.includes('TMB')||c.includes('1234')||c.length>4){localStorage.setItem('paid','1');alert('✅ PAYMENT CONFIRMED! 2000 films unlocked! Biso!');closePay();render();}else{alert('Code invalide. WhatsApp +243823043089 avec preuve paiement');}}
+function demo(){localStorage.setItem('demo','0');closePay();alert('Démo: 3 films gratuits, puis payez 5000 FC');}
+function closePay(){document.getElementById('pay').style.display='none';}
+if(localStorage.getItem('paid')){console.log('paid user');}
+render();
+if(!localStorage.getItem('paid')&&!localStorage.getItem('seen')){setTimeout(()=>{document.getElementById('pay').style.display='flex';localStorage.setItem('seen','1')},1500);}
+</script></body></html>
